@@ -1,26 +1,27 @@
 <div>
     <div><i class="uil uil-ellipsis-h"></i></div>
     <ul class="side-bar__list list-one">
-        <li>
+        <li *ngFor="let item of mainMenu.defaultOptions">
             <div class="list-wrapper-item">
-                <i [ngClass]="['uil']"></i>
-                <span class="side-bar__list list-label">ejemplo</span>
+                <i [ngClass]="['uil', item.icon]"></i>
+                <span class="side-bar__list list-label">{{item.name}}</span>
             </div>
         </li>    
     </ul>
     <div class="side-bar__separator"></div>
     <ul class="side-bar__list list-two">
-        <li>
+        <li *ngFor="let item of mainMenu.accessLink">
             <div class="list-wrapper-item">
-                <i [ngClass]="['uil']"></i>
-                <span class="side-bar__list list-label">ejemplo2</span>
+                <i [ngClass]="['uil', item.icon]"></i>
+                <span class="side-bar__list list-label">{{item.name}}</span>
             </div>
         </li>
     </ul>
+    <div class="side-bar__separator line-separator"></div>
     <div class="side-bar__list list-three">
-        <li>
+        <li *ngFor="let item of customOptions">
             <div class="list-wrapper-item">
-                <span class="side-bar__list list-label">ejemplo3</span>
+                <span class="side-bar__list list-label">{{item.name}}</span>
             </div>
         </li>
     </div>
