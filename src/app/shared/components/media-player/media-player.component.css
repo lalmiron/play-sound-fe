@@ -1,0 +1,24 @@
+.media-player {
+    background-color: var(--color-5);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    height: 85px;
+    border-top: solid 1px var(--color-2);
+    box-shadow: 0px -15px 15px 7px #0000002e;
+}
+
+.media-player .media-player--wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0;
+}
+
+.media-player .media-player--wrapper .player-center {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
