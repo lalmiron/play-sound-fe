@@ -4,13 +4,17 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomePageComponent
+    path: 'traks',
+    loadChildren: () => import('@modules/tracks/tracks.module').then(m => m.TracksModule)
+  },
+  {
+    path: 'history',
+    loadChildren: () => import('@modules/history/history.module').then(m => m.HistoryModule)
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class HomeRoutingModule { }
