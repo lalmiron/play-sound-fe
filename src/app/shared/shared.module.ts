@@ -20,7 +20,9 @@ import { CardPlayerComponent } from './components/card-player/card-player.compon
     CommonModule
   ],
   exports: [
-    SideBarComponent
+    SideBarComponent,
+    MediaPlayerComponent,
+    HeaderUserComponent
   ]
 })
 export class SharedModule { }

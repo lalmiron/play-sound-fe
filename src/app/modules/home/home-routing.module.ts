@@ -4,7 +4,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path: 'traks',
+    path: 'tracks',
     loadChildren: () => import('@modules/tracks/tracks.module').then(m => m.TracksModule)
   },
   {
