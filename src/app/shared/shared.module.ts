@@ -22,7 +22,9 @@ import { CardPlayerComponent } from './components/card-player/card-player.compon
   exports: [
     SideBarComponent,
     MediaPlayerComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+    SectionGenericComponent,
+    CardPlayerComponent
   ]
 })
 export class SharedModule { }
