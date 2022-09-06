@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -10,7 +11,14 @@ export class AuthService {
 
   constructor(private _http: HttpClient) { }
 
-  sendCredentials(email: string, passwored: string): void {
-    //TODO validar con be
+  sendCredentials(email: string, password: string): Observable<any> {
+
+    const body = {
+      email,
+      password
+    }
+
+    return this._http.post(
+  `${this.URL}/login`, body)
   }
 }
