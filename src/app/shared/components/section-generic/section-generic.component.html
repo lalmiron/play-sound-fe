@@ -3,8 +3,8 @@
 
     <div class="section--generic__player--zone">
         <ul class="player--list" [ngClass]="{'card-small':mode === 'small','card-big':mode === 'big'}">
-            <li *ngFor="let player of dataTracks">
-                <psf-card-player></psf-card-player>
+            <li *ngFor="let track of dataTracks">
+                <psf-card-player [mode]="mode" [track]="track"></psf-card-player>
             </li>
         </ul>
     </div> 
