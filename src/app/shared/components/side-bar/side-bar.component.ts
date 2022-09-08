@@ -43,17 +43,19 @@ export class SideBarComponent implements OnInit {
       {
         name: 'Tu Biblioteca',
         icon: 'uil uil-chart',
-        router: ['/','favorites']
+        router: ['/','tracks']
       },
     ]
     this.mainMenu.accessLink = [
       {
         name: 'Crear Lista',
-        icon: 'uil-plus-square'
+        icon: 'uil-plus-square',
+        router:['/','']
       },
       {
         name: 'Canciones que te gustan',
-        icon: 'uil-heart-medical'
+        icon: 'uil-heart-medical',
+        router:['/','favorites']
       }
     ]
     //TODO recuperar del be
