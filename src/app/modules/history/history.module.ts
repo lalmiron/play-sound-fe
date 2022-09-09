@@ -5,6 +5,7 @@ import { HistoryRoutingModule } from './history-routing.module';
 import { SearchComponent } from './components/search/search.component';
 import { HistoryPageComponent } from './pages/history-page/history-page.component';
 import { SharedModule } from '@shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SharedModule } from '@shared/shared.module';
   imports: [
     CommonModule,
     HistoryRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class HistoryModule { }
