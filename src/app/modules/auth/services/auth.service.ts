@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 import {  tap} from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ import {  tap} from 'rxjs';
 export class AuthService {
   private readonly URL = environment.api
 
-  constructor(private _http: HttpClient, private cookie: CookieService) {}
+  constructor(private _http: HttpClient, private cookie: CookieService, private router: Router) {}
  
 
   sendCredentials(email: string, password: string): Observable<any> {
@@ -27,6 +28,7 @@ export class AuthService {
         tap((responseOk:any) => {
           const { token, user } = responseOk
           this.cookie.set('token', token, 4, '/')
+          this.router.navigate(['/'])
         })
       )
   }
