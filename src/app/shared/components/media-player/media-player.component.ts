@@ -10,25 +10,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./media-player.component.css']
 })
 export class MediaPlayerComponent implements OnInit, OnDestroy {
-  mockCover: TrackModel = {
-    cover: 'https://los40es00.epimg.net/los40/imagenes/2017/11/28/album/1511885438_220718_1512034279_album_normal.jpg',
-    album: 'Vogue',
-    name: 'Madonna',
-    url: 'http"//localhost/track.mp3',
-    _id: 1
-  }
-
   listObservers$: Array<Subscription> = []
-  constructor(private multimediaService: MultimediaService) { }
+  constructor(public multimediaService: MultimediaService) { }
 
   ngOnInit(): void {
-    const observer1$: Subscription =this.multimediaService.callback.subscribe(
-      (response: TrackModel) => { 
-        console.log("Recibiendo cancion ", response);
-      }
-    )
-
-    this.listObservers$ = [observer1$]
   }
 
   ngOnDestroy(): void {
