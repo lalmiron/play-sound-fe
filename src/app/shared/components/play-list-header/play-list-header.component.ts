@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'psf-play-list-header',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./play-list-header.component.css']
 })
 export class PlayListHeaderComponent implements OnInit {
+  @Input() title: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
