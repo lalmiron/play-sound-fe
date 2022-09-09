@@ -9,6 +9,7 @@ import { CardPlayerComponent } from './components/card-player/card-player.compon
 import { PlayListHeaderComponent } from './components/play-list-header/play-list-header.component';
 import { PlayListBodyComponent } from './components/play-list-body/play-list-body.component';
 import { ImgBrokenDirective } from './directives/img-broken.directive';
+import { OrderListPipe } from './pipes/order-list.pipe';
 
 
 
@@ -21,7 +22,8 @@ import { ImgBrokenDirective } from './directives/img-broken.directive';
     CardPlayerComponent,
     PlayListHeaderComponent,
     PlayListBodyComponent,
-    ImgBrokenDirective
+    ImgBrokenDirective,
+    OrderListPipe
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { ImgBrokenDirective } from './directives/img-broken.directive';
     PlayListBodyComponent,
     SectionGenericComponent,
     CardPlayerComponent,
-    ImgBrokenDirective
+    ImgBrokenDirective,
+    OrderListPipe
   ]
 })
 export class SharedModule { }
