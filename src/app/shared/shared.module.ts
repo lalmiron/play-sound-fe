@@ -9,6 +9,7 @@ import { CardPlayerComponent } from './components/card-player/card-player.compon
 import { PlayListHeaderComponent } from './components/play-list-header/play-list-header.component';
 import { PlayListBodyComponent } from './components/play-list-body/play-list-body.component';
 import { OrderListPipe } from './pipes/order-list.pipe';
+import { DataPlaylistComponent } from './components/data-playlist/data-playlist.component';
 
 
 
@@ -21,7 +22,8 @@ import { OrderListPipe } from './pipes/order-list.pipe';
     CardPlayerComponent,
     PlayListHeaderComponent,
     PlayListBodyComponent,
-    OrderListPipe
+    OrderListPipe,
+    DataPlaylistComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { OrderListPipe } from './pipes/order-list.pipe';
     PlayListBodyComponent,
     SectionGenericComponent,
     CardPlayerComponent,
-    OrderListPipe
+    OrderListPipe,
+    DataPlaylistComponent
   ]
 })
 export class SharedModule { }

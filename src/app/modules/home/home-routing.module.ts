@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'history',
     loadChildren: () => import('@modules/history/history.module').then(m => m.HistoryModule)
+  },
+  {
+    path: 'data',
+    loadChildren: () => import('@modules/playlist/playlist.module').then(m => m.PlaylistModule)
   }
 ];
 
