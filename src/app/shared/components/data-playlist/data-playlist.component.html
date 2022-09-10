@@ -6,7 +6,7 @@
                 <i class="uil uil-multiply"></i>
             </button>
         </div>
-        <form action="" class="form-grid">
+        <form (ngSubmit)="sendDataPlaylist()" [formGroup]="formPlaylist" class="form-grid">
             <div class="img-container">
                 <div class="playlist-img">
                     <div class="playlist-img__icon">
@@ -23,11 +23,11 @@
             </div>
             <div class="input-title-container">
                 <label for="title" class="input-label in-title in-title-border">Nombre</label>
-                <input type="text" name="title" id="title" placeholder="Agrega un nombre" class="input-title title-border"> 
+                <input type="text" formControlName="title" placeholder="Agrega un nombre" class="input-title title-border"> 
             </div>
             <div class="input-description-container">
                 <label for="description" class="input-label in-title in-title-border">Descripción</label>
-                <textarea name="description" id="description" placeholder="Agrega una descripción opcional" class="input-title title-border"></textarea>
+                <textarea formControlName="description" placeholder="Agrega una descripción opcional" class="input-title title-border"></textarea>
             </div>
             <div class="save-container">
                 <button class="button-save">

@@ -10,8 +10,7 @@ import { PlayListHeaderComponent } from './components/play-list-header/play-list
 import { PlayListBodyComponent } from './components/play-list-body/play-list-body.component';
 import { OrderListPipe } from './pipes/order-list.pipe';
 import { DataPlaylistComponent } from './components/data-playlist/data-playlist.component';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,8 @@ import { DataPlaylistComponent } from './components/data-playlist/data-playlist.
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     SideBarComponent,
