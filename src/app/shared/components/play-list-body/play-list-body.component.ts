@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import * as dataRaw from '../../../data/track.model.json'
-import { TrackModel } from './../../../core/models/tracks.model';
+import { TrackModel } from '@core/models/tracks.model';
 
 @Component({
   selector: 'psf-play-list-body',
@@ -14,8 +13,6 @@ export class PlayListBodyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const { data }:any = (dataRaw as any).default;
-    this.tracks = data;
   }
 
   changeSort(property:string):void{

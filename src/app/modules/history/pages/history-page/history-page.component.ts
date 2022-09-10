@@ -17,7 +17,9 @@ export class HistoryPageComponent implements OnInit {
 
   reciveData(event:string):void {
     this.searchService.searchTracks$(event).subscribe({
-      next:({data})=>{
+      next:(data)=>{
+        console.log(data);
+        
         this.listResult = data;
       },
       error:(err)=>{
