@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TrackModel } from '@core/models/tracks.model';
 import { SearchService } from '@modules/history/services/search.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'psf-history-page',
@@ -8,7 +8,7 @@ import { SearchService } from '@modules/history/services/search.service';
   styleUrls: ['./history-page.component.css']
 })
 export class HistoryPageComponent implements OnInit {
-  listResult:Array<TrackModel> = [];
+  listResult$: Observable<any> = of([]);
 
   constructor(private searchService:SearchService) { }
 
@@ -16,15 +16,6 @@ export class HistoryPageComponent implements OnInit {
   }
 
   reciveData(event:string):void {
-    this.searchService.searchTracks$(event).subscribe({
-      next:(data)=>{
-        console.log(data);
-        
-        this.listResult = data;
-      },
-      error:(err)=>{
-        console.log(err);
-      }
-    })
+    this.listResult$ = this.searchService.searchTracks$(event)
   }
 }

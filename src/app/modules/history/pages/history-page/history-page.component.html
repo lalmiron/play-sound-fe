@@ -1,4 +1,4 @@
 <div class="history-page">
     <psf-search (callbackData)="reciveData($event)"></psf-search>
-    <psf-play-list-body [tracks]="listResult"></psf-play-list-body>
+    <psf-play-list-body [tracks]="listResult$ | async"></psf-play-list-body>
 </div>
