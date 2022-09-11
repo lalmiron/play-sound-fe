@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 import { PlaylistService } from '@modules/playlist/services/playlist.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { PlaylistService } from '@modules/playlist/services/playlist.service';
 export class DataPlaylistComponent implements OnInit {
   formPlaylist: FormGroup = new FormGroup({})
 
-  constructor(private _playlistService: PlaylistService) { }
+  constructor(private _playlistService: PlaylistService, private _location: Location) { }
 
   ngOnInit(): void {
     this.formPlaylist = new FormGroup({
@@ -33,5 +34,11 @@ export class DataPlaylistComponent implements OnInit {
         console.log(resp);
       }
     })
+    
+    this.backClicked()
+  }
+
+  backClicked(): void {
+    this._location.back();
   }
 }
