@@ -5,6 +5,10 @@ import { HomePageComponent } from '@modules/home/pages/home-page/home-page.compo
 
 const routes: Routes = [
   {
+    path: 'register',
+    loadChildren:() => import('./modules/register/register.module').then(m => m.RegisterModule)
+  },
+  {
     path:'auth',
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
