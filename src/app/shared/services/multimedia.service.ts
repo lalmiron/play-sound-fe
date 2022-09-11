@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { TrackModel } from '@core/models/tracks.model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, Observer, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +12,6 @@ export class MultimediaService {
   public audio!: HTMLAudioElement
   
   constructor() { 
-    this.audio = new Audio()
-    this.trackInfo$.subscribe(responseOK => {
-      if(responseOK){
-        
-        this.setAudio(responseOK)
-      }
-      
-    })
   }
 
   private listenAllEvents(): void {

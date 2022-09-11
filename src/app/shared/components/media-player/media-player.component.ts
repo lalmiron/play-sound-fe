@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TrackModel } from '@core/models/tracks.model';
-import { TracksModule } from '@modules/tracks/tracks.module';
 import { MultimediaService } from '@shared/services/multimedia.service';
 import { Subscription } from 'rxjs';
 
@@ -14,11 +13,15 @@ export class MediaPlayerComponent implements OnInit, OnDestroy {
   constructor(public multimediaService: MultimediaService) { }
 
   ngOnInit(): void {
+
   }
+
 
   ngOnDestroy(): void {
-    this.listObservers$.forEach(u => u.unsubscribe())
+    this.listObservers$.forEach(u => u.unsubscribe());
     
   }
-
 }
+
+  
+
