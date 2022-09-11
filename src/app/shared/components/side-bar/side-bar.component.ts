@@ -50,7 +50,7 @@ export class SideBarComponent implements OnInit {
       {
         name: 'Crear Lista',
         icon: 'uil-plus-square',
-        router:['/','']
+        router:['/','data']
       },
       {
         name: 'Canciones que te gustan',

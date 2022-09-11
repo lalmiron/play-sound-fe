@@ -20,8 +20,10 @@ export class TracksPageComponent implements OnInit, OnDestroy {
   }
 
   async loadDataAll() : Promise<any> {
-    const dataRaw = this.trackService.getAllTracks$()
+    //const dataRaw = this.trackService.getAllTracks$()
     //const dataRaw = await this.trackService.getAllTracks$().toPromise()
+    this.tracksTrending = await this.trackService.getAllTracks$().toPromise()
+    this.tracksRandom = await this.trackService.getAllRandom$().toPromise()
     
   }
 

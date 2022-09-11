@@ -10,8 +10,8 @@ import { PlayListHeaderComponent } from './components/play-list-header/play-list
 import { PlayListBodyComponent } from './components/play-list-body/play-list-body.component';
 import { ImgBrokenDirective } from './directives/img-broken.directive';
 import { OrderListPipe } from './pipes/order-list.pipe';
-
-
+import { DataPlaylistComponent } from './components/data-playlist/data-playlist.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,11 +23,13 @@ import { OrderListPipe } from './pipes/order-list.pipe';
     PlayListHeaderComponent,
     PlayListBodyComponent,
     ImgBrokenDirective,
-    OrderListPipe
+    OrderListPipe,
+    DataPlaylistComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     SideBarComponent,
@@ -38,7 +40,8 @@ import { OrderListPipe } from './pipes/order-list.pipe';
     SectionGenericComponent,
     CardPlayerComponent,
     ImgBrokenDirective,
-    OrderListPipe
+    OrderListPipe,
+    DataPlaylistComponent
   ]
 })
 export class SharedModule { }

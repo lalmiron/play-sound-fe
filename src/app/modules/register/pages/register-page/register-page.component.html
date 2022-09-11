@@ -1,0 +1,31 @@
+<div class="login-auth-page">
+    <div class="login-auth-wrapper">
+        <h3>Registrate para ingresar a Playsound 🎶🎶</h3>
+        <div class="login-social-zone">
+            <button class="social-btn btn-fb "> <i class="uil uil-facebook-f"></i> Registrarse con facebook</button>
+            <button class="social-btn"><i class="uil uil-google"></i> Registrarse con Google</button>
+        </div>
+        <div class="separator"></div>
+        <form (ngSubmit)="sendRegister()"[formGroup]="formRegister" class="login-auth-form">
+            <div class="form-group">
+                <label for="email">¿Cuál es tu correo electrónico?</label>
+                <input formControlName="email" type="text" placeholder="Dirección de correo electrónico" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="name">Ingrese su nombre</label>
+                <input formControlName="name" type="text" placeholder="Nombre completo" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="password">Crea una contraseña</label>
+                <input formControlName="password" type="password" placeholder="Contraseña" class="form-input">
+            </div>
+            <div class="form-group-check">
+                <input formControlName="checkrole" type="checkbox" class="input-check">
+                <label>Soy artista</label>
+            </div>
+            <div class="form-action">
+                <button [disabled]="formRegister.invalid" class="login social-btn">Registrate</button>
+            </div>   
+        </form>
+    </div>
+</div>
