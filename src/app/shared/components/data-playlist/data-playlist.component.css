@@ -1,6 +1,6 @@
 .genericModal__overlay {
     align-items: center;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0, 0, 0, .7);
     bottom: 0;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@
     background-color: transparent;
     border: 0;
     border-radius: 32px;
-    color: hsla(0,0%,100%,.7);
+    color: hsla(0, 0%, 100%, .7);
     /*grid-area: close-button;*/
     height: 32px;
     justify-content: center;
@@ -66,7 +66,8 @@
     width: 180px;
 }
 
-.playlist-img, .img-select {
+.playlist-img,
+.img-select {
     height: 100%;
     width: 100%;
 }
@@ -104,7 +105,8 @@
     transition: opacity .2s;
 }
 
-.input-title-container::focus .in-title-border {
+.input-title-container:focus-within .in-title-border,
+.input-description-container:focus-within .in-title-border {
     opacity: 1;
 }
 
@@ -115,7 +117,7 @@
     position: absolute;
     right: 50%;
     top: 50%;
-    transform: translate(50%,-50%);
+    transform: translate(50%, -50%);
     width: 110%;
     z-index: -1;
 }
@@ -125,7 +127,7 @@
 }
 
 .input-title {
-    background: hsla(0,0%,100%,.1);
+    background: hsla(0, 0%, 100%, .1);
     border: 1px solid transparent;
     border-radius: 4px;
     color: #fff;
@@ -136,7 +138,7 @@
     width: 100%;
 }
 
-.title-border::focus {
+.title-border:focus {
     background-color: #333;
     border: 1px solid #535353;
     outline: none;
@@ -182,8 +184,8 @@
 .button-save-description {
     box-sizing: border-box;
     position: relative;
-    background-color: var(--background-base,#ffffff);
-    color: var(--text-base,#000000);
+    background-color: var(--background-base, #ffffff);
+    color: var(--text-base, #000000);
     display: flex;
     border-radius: 500px;
     font-size: inherit;
@@ -218,28 +220,29 @@
     opacity: 1;
 }
 
-.uil.uil-music, .uil.uil-pen {
+.uil.uil-music,
+.uil.uil-pen {
     font-size: 120px;
 }
 
 .input-title-text {
-    background: hsla(0,0%,100%,.1);
+    background: hsla(0, 0%, 100%, .1);
     border: 1px solid transparent;
     border-radius: 4px;
     color: #fff;
     font-family: inherit;
     font-size: 14px;
     height: 100%;
-    padding: 0 12px;
     width: 100%;
     resize: none;
+    padding: 8px 8px 24px;
 }
 
 .title-border-text {
     border: 1px solid transparent;
 }
 
-.title-border-text::focus {
+.title-border-text:focus {
     background-color: #333;
     border: 1px solid #535353;
     outline: none;
