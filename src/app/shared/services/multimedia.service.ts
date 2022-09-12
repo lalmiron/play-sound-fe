@@ -13,6 +13,7 @@ export class MultimediaService {
   public timeElapsed$ : BehaviorSubject<string> = new BehaviorSubject('00:00')
   public timeRemaining$ : BehaviorSubject<string> = new BehaviorSubject('00:00')
   public playerStatus$ : BehaviorSubject<string> = new BehaviorSubject('paused')
+  public playerPercentage$ : BehaviorSubject<number> = new BehaviorSubject(0)
   
   constructor() { 
     this.audio = new Audio()
@@ -23,7 +24,6 @@ export class MultimediaService {
     })
 
     this.listenAllEvents()
-    
   }
 
   private listenAllEvents(): void {
@@ -32,21 +32,37 @@ export class MultimediaService {
     this.audio.addEventListener('play', this.setPlayerStatus, false)
     this.audio.addEventListener('pause', this.setPlayerStatus, false)
     this.audio.addEventListener('ended', this.setPlayerStatus, false)
-    
   }
 
   private setPlayerStatus = (state: any) => {
 
+    switch (state.type) {
+      case 'play':
+        this.playerStatus$.next('play')
+        break
+      case 'ended':
+        this.playerStatus$.next('ended')
+        break
+      case 'playing':
+        this.playerStatus$.next('playing')
+        break
+      default:
+        this.playerStatus$.next('paused')
+        break;
+    }
   }
 
-  
-
   private calculateTime = () => {
-    console.log('disparando evento')
     const { duration, currentTime } = this.audio 
     console.table([duration, currentTime])
     this.setTimeElapsed(currentTime)
     this.setTimeRemaining(currentTime, duration)
+    this.setPercentage(currentTime, duration)
+  }
+
+  private setPercentage(currentTime:number, duration:number): void {
+    let percentage = (currentTime * 100) / duration;
+    this.playerPercentage$.next(percentage);
   }
 
   private setTimeElapsed(currentTime: number) : void {
@@ -76,5 +92,15 @@ export class MultimediaService {
     console.log("akakak");
     this.audio.src = track.url;
     this.audio.play()
+  }
+
+  public togglePlayer(): void {
+    (this.audio.paused) ? this.audio.play() : this.audio.pause()
+  }
+
+  public seekAudio(percentage:number): void {
+    const { duration } = this.audio
+    const percentageToSecond = (percentage * duration) / 100
+    this.audio.currentTime = percentageToSecond
   }
 }

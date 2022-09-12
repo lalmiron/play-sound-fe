@@ -37,20 +37,23 @@
     <div class="player-controls-inside">
         <div class="buttons-media">
             <button class="arrow btn">
-                <i class="uil uil-previous"></i>
+                <i class="uil uil-step-backward"></i>
             </button>
-            <button class="play btn">
-                <i class="uil "></i>
+            <button (click) = "multimediaService.togglePlayer()" class="play btn">
+                <i [ngClass]="{
+                    'uil uil-pause': state === 'paused',
+                    'uil uil-play': state !== 'paused'
+                }"></i>
             </button>
             <button class="arrow btn">
-                <i class="uil uil-step-forward"></i>
+                <i class="uil uil-skip-forward"></i>
             </button>
         </div>
         <div class="media-linetime">
 
             <div class="time">{{multimediaService.timeElapsed$ | async}}</div>
-            <span #progressBar class="time-progress">
-                <span class="time-progress-live" [style.width]="10+'%'">
+            <span #progressBar (click)="handlePosition($event)" class="time-progress">
+                <span class="time-progress-live" [style.width]="(multimediaService.playerPercentage$ | async)+'%'">
                 </span>
             </span>
             <div class="time">{{multimediaService.timeRemaining$ | async}}</div>
