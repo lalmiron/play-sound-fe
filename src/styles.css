@@ -16,6 +16,10 @@
     --animation-1: 200ms;   
 }
 
+*{
+    box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
