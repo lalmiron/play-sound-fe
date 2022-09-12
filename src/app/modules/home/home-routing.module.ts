@@ -1,6 +1,5 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
@@ -18,6 +17,10 @@ const routes: Routes = [
   {
     path: 'data',
     loadChildren: () => import('@modules/playlist/playlist.module').then(m => m.PlaylistModule)
+  },
+  {
+    path: '**', 
+    redirectTo: '/tracks'
   }
 ];
 

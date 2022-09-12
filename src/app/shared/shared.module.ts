@@ -8,6 +8,7 @@ import { SectionGenericComponent } from './components/section-generic/section-ge
 import { CardPlayerComponent } from './components/card-player/card-player.component';
 import { PlayListHeaderComponent } from './components/play-list-header/play-list-header.component';
 import { PlayListBodyComponent } from './components/play-list-body/play-list-body.component';
+import { ImgBrokenDirective } from './directives/img-broken.directive';
 import { OrderListPipe } from './pipes/order-list.pipe';
 import { DataPlaylistComponent } from './components/data-playlist/data-playlist.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CardPlayerComponent,
     PlayListHeaderComponent,
     PlayListBodyComponent,
+    ImgBrokenDirective,
     OrderListPipe,
     DataPlaylistComponent
   ],
@@ -37,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PlayListBodyComponent,
     SectionGenericComponent,
     CardPlayerComponent,
+    ImgBrokenDirective,
     OrderListPipe,
     DataPlaylistComponent
   ]
