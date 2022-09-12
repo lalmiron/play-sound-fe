@@ -23,23 +23,36 @@ export class TrackService {
   getAllTracks$(): Observable<any> {
     return this.http.get(`${this.URL}/tracks`)
     .pipe(
-      map(({data}: any) => 
-      {return data}
-      )
+      map((response:any) => { 
+        return (response.tracks).map((t:any)=>{
+          return {
+            name: t.name,
+            album: t.Album.description,
+            cover: t.cover,
+            url: t.url,
+            _id:t.id,
+            artist: t.Artist
+          }
+        });
+      })
     )
   }
 
   getAllRandom$(): Observable<any> {
     return this.http.get(`${this.URL}/tracks`)
-      .pipe(
-        mergeMap(({ data }: any) => this.skipById(data, 2)),
-        // map((dataRevertida) => { //TODO aplicar un filter comun de array
-        //   return dataRevertida.filter((track: TrackModel) => track._id !== 1)
-        // })
-        catchError((err) => {
-          const { status, statusText } = err;
-          return of([])
-        })
-      )
+    .pipe(
+      map((response:any) => { 
+        return (response.tracks).map((t:any)=>{
+          return {
+            name: t.name,
+            album: t.Album.description,
+            cover: t.cover,
+            url: t.url,
+            _id:t.id,
+            artist: t.Artist
+          }
+        });
+      })
+    )
   }
 }
