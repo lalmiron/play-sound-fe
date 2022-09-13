@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'psf-side-bar',
@@ -23,7 +23,7 @@ export class SideBarComponent implements OnInit {
     accessLink: Array<any>
   } = { defaultOptions: [], accessLink:[] }
 
-  customOptions: Array<any> = []
+  @Input() customOptions: Array<any> = []
 
 
   constructor() { }
@@ -56,13 +56,6 @@ export class SideBarComponent implements OnInit {
         name: 'Canciones que te gustan',
         icon: 'uil-heart-medical',
         router:['/','favorites']
-      }
-    ]
-    //TODO recuperar del be
-    this.customOptions = [
-      {
-        name: 'Mi Lista',
-        router: ['/']
       }
     ]
   }
