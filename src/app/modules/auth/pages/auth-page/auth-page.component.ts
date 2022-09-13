@@ -30,10 +30,8 @@ export class AuthPageComponent implements OnInit {
     const {email, password} = this.formLogin.value
     this._authServices.sendCredentials(email, password)
     .subscribe({next(resp) {
-      console.log('Sesion iniciada correcta ', resp);
     },
     error(msg)  {
-      console.log('Ocurrio error con tu email o password',msg);  
     }})
   }
 }

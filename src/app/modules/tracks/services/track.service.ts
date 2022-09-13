@@ -31,7 +31,8 @@ export class TrackService {
             cover: t.Album.cover,
             url: t.url,
             _id:t.id,
-            artist: t.Artist
+            artist: t.Artist,
+            createdAt: t.createdAt
           }
         });
       })
@@ -49,9 +50,10 @@ export class TrackService {
             cover: t.Album.cover,
             url: t.url,
             _id:t.id,
-            artist: t.Artist
+            artist: t.Artist,
+            createdAt: t.createdAt
           }
-        });
+        }).reverse();
       })
     )
   }
