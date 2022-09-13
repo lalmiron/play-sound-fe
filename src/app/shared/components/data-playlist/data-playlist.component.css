@@ -208,6 +208,8 @@
     opacity: 0;
     padding: 0;
     text-align: center;
+    margin: 0;
+    width: 180px;
 }
 
 .btn-playlist-img:hover {
