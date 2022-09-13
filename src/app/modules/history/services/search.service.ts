@@ -21,7 +21,8 @@ export class SearchService {
             cover: t.Album.cover,
             url: t.url,
             _id:t.id,
-            artist: t.Artist
+            artist: t.Artist,
+            createdAt: t.createdAt
           }
         });
       })

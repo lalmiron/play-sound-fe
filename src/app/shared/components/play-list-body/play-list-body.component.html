@@ -1,7 +1,7 @@
 <div class="play-list-body">
     <ul class="play-list-table-header">
         <li (click)="changeSort('nombre')">Nombre</li>
-        <li (click)="changeSort('album')">Album 🆗</li>
+        <li (click)="changeSort('album')">Album</li>
         <li (click)="changeSort('nombre')">Fecha incorporación</li>
         <li><i class="uil uil-clock-eight"></i></li>
     </ul>
@@ -10,13 +10,13 @@
             <ng-container *ngTemplateOutlet="coverSection;context:{track}"></ng-container>
         </li>
         <li class="track-name-opacity">
-            {{track.name}}
-        </li>
-        <li class="track-name-opacity">
             {{track.album}}
         </li>
         <li class="track-name-opacity">
-            {{track.album}}
+            {{track.createdAt | date}}
+        </li>
+        <li class="track-name-opacity">
+            {{'3:33'}}
         </li>
     </ul>
 </div>
