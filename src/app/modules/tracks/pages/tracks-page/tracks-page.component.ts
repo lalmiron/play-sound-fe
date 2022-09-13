@@ -20,11 +20,7 @@ export class TracksPageComponent implements OnInit, OnDestroy {
   }
 
   async loadDataAll() : Promise<any> {
-    //const dataRaw = this.trackService.getAllTracks$()
-    //const dataRaw = await this.trackService.getAllTracks$().toPromise()
     this.tracksTrending = await this.trackService.getAllTracks$().toPromise()
-    
-    
   }
 
   loadDataRandom(): void {
@@ -35,11 +31,5 @@ export class TracksPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-
   }
-
-  /* async loadDataAll(): Promise<any> {
-    this.tracksTrending = await this.trackService.getAllTracks$().toPromise()
-
-  } */
 }

@@ -53,8 +53,7 @@ export class MultimediaService {
   }
 
   private calculateTime = () => {
-    const { duration, currentTime } = this.audio 
-    console.table([duration, currentTime])
+    const { duration, currentTime } = this.audio
     this.setTimeElapsed(currentTime)
     this.setTimeRemaining(currentTime, duration)
     this.setPercentage(currentTime, duration)
@@ -89,7 +88,6 @@ export class MultimediaService {
   }
 
   public setAudio(track: TrackModel): void {
-    console.log("akakak");
     this.audio.src = track.url;
     this.audio.play()
   }

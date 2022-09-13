@@ -28,10 +28,8 @@ export class DataPlaylistComponent implements OnInit {
     this._playlistService.createPlaylist(title,description)
     .subscribe({
       next(resp) {
-        console.log(resp);
       },
       error(resp) {
-        console.log(resp);
       }
     })
     

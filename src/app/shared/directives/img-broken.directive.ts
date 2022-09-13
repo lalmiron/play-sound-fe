@@ -8,8 +8,7 @@ export class ImgBrokenDirective {
     const elNative = this.elHost.nativeElement
     elNative.src = '../../../assets/img_broken_logo.png'
   }
-  constructor(private elHost: ElementRef) { 
-    console.log(this.elHost);
+  constructor(private elHost: ElementRef) {
   }
 
 }
