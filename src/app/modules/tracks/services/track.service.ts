@@ -28,7 +28,7 @@ export class TrackService {
           return {
             name: t.name,
             album: t.Album.description,
-            cover: t.cover,
+            cover: t.Album.cover,
             url: t.url,
             _id:t.id,
             artist: t.Artist
@@ -46,7 +46,7 @@ export class TrackService {
           return {
             name: t.name,
             album: t.Album.description,
-            cover: t.cover,
+            cover: t.Album.cover,
             url: t.url,
             _id:t.id,
             artist: t.Artist
