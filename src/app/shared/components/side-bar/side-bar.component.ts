@@ -43,7 +43,7 @@ export class SideBarComponent implements OnInit {
       {
         name: 'Tu Biblioteca',
         icon: 'uil uil-chart',
-        router: ['/','tracks']
+        router: ['/','depository']
       },
     ]
     this.mainMenu.accessLink = [
