@@ -39,10 +39,8 @@ export class RegisterPageComponent implements OnInit {
     }
     this._registerModule.createUser(name, email, password, role)
     .subscribe({next(resp) {
-      console.log('Registro correcto', resp);
     },
     error(msg) {
-      console.log('El usuario existe o falta completar un campo',msg);
     }
     })
   }

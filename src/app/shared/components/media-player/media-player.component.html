@@ -41,8 +41,8 @@
             </button>
             <button (click) = "multimediaService.togglePlayer()" class="play btn">
                 <i [ngClass]="{
-                    'uil uil-pause': state === 'paused',
-                    'uil uil-play': state !== 'paused'
+                    'uil uil-play': state === 'paused',
+                    'uil uil-pause': state !== 'paused'
                 }"></i>
             </button>
             <button class="arrow btn">
