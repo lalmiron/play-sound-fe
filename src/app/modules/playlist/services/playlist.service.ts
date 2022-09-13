@@ -14,7 +14,7 @@ export class PlaylistService {
   createPlaylist(name: string, description:string): Observable<any> {
     const body = {
       name,
-      userId:4
+      description
     }
     return this._http.post(`${this.URL}/playlist`, body)
   }
