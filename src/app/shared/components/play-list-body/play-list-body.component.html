@@ -1,8 +1,8 @@
 <div class="play-list-body">
     <ul class="play-list-table-header">
-        <li (click)="changeSort('nombre')">Nombre ❤</li>
-        <li (click)="changeSort('album')">álbum 🆗</li>
-        <li (click)="changeSort('nombre')">fecha incorporación 🍌😁</li>
+        <li (click)="changeSort('nombre')">Nombre</li>
+        <li (click)="changeSort('album')">Album 🆗</li>
+        <li (click)="changeSort('nombre')">Fecha incorporación</li>
         <li><i class="uil uil-clock-eight"></i></li>
     </ul>
     <ul class="play-list-rows" *ngFor="let track of tracks | orderList:optionSort.property:optionSort.order">
@@ -10,7 +10,7 @@
             <ng-container *ngTemplateOutlet="coverSection;context:{track}"></ng-container>
         </li>
         <li class="track-name-opacity">
-            {{track.album}}
+            {{track.name}}
         </li>
         <li class="track-name-opacity">
             {{track.album}}
