@@ -19,17 +19,21 @@ const routes: Routes = [
     loadChildren: () => import('@modules/history/history.module').then(m => m.HistoryModule)
   },
   {
+    path: 'dashboard',
+    loadChildren: () => import('@modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
     path: 'data',
     loadChildren: () => import('@modules/playlist/playlist.module').then(m => m.PlaylistModule)
   },
   {
-    path: '**', 
+    path: '**',
     redirectTo: '/tracks'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class HomeRoutingModule { }
