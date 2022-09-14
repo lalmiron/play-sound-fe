@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter,Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { PlaylistService } from '@modules/playlist/services/playlist.service';
@@ -27,9 +27,8 @@ export class DataPlaylistComponent implements OnInit {
     const {title, description} = this.formPlaylist.value
     this._playlistService.createPlaylist(title,description)
     .subscribe({
-      next(resp) {
-      },
-      error(resp) {
+      next:(resp) => {
+        this._playlistService.newPlaylist$.next(resp)
       }
     })
     

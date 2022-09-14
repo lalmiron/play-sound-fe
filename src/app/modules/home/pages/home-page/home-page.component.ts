@@ -7,20 +7,8 @@ import { PlaylistsService } from '@modules/depository/services/playlists.service
 })
 export class HomePageComponent implements OnInit {
 
-  playlistMenu: Array<any> = []
-
-  constructor(private playlists: PlaylistsService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.playlists.getUserPlaylist$().subscribe({
-      next: (resp: Array<any>) => {
-        this.playlistMenu = resp.map((item: any) => {
-          return {
-            name: item.name,
-            router: ['/playlist', item.id]
-          }
-        })
-      }
-    })
   }
 }

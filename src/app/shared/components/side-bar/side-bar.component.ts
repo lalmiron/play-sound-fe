@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PlaylistService } from '@modules/playlist/services/playlist.service';
+import { PlaylistsService } from '@modules/depository/services/playlists.service';
 
 @Component({
   selector: 'psf-side-bar',
@@ -23,12 +25,26 @@ export class SideBarComponent implements OnInit {
     accessLink: Array<any>
   } = { defaultOptions: [], accessLink:[] }
 
-  @Input() customOptions: Array<any> = []
+  customOptions: Array<any> = []
 
 
-  constructor() { }
+  constructor(private playlistService: PlaylistService, private playlistUser:PlaylistsService) { }
 
   ngOnInit(): void {
+    this.playlistService.newPlaylist$.subscribe({
+      next: (resp) => {
+        this.playlistUser.getUserPlaylist$().subscribe({
+          next:(resp) => { 
+            this.customOptions = resp.map( (r:any) => {
+              return {
+                name: r.name,
+                router: ['/playlist', r.id]
+              }
+            })
+           }
+        })
+      }
+    })
     this.mainMenu.defaultOptions = [
       {
         name: 'Home',
