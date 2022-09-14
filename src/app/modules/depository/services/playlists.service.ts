@@ -14,6 +14,7 @@ export class PlaylistsService {
   getUserPlaylist$():  Observable<any>{
     return this._http.get(`${this.URL}/playlists`).pipe(
       map(({playlist}:any)=>{
+        console.log(playlist)
         return playlist
       })
     )
