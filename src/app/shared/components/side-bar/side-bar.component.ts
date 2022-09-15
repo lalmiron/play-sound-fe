@@ -61,6 +61,11 @@ export class SideBarComponent implements OnInit {
         icon: 'uil uil-chart',
         router: ['/','depository']
       },
+      {
+        name: 'Dashboard',
+        icon: 'uil uil-headphones-alt',
+        router: ['/','dashboard']
+      }
     ]
     this.mainMenu.accessLink = [
       {

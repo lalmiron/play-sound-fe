@@ -12,6 +12,8 @@ import { ImgBrokenDirective } from './directives/img-broken.directive';
 import { OrderListPipe } from './pipes/order-list.pipe';
 import { DataPlaylistComponent } from './components/data-playlist/data-playlist.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AlbumHeaderComponent } from './components/album-header/album-header.component';
+import { AlbumBodyComponent } from './components/album-body/album-body.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PlayListBodyComponent,
     ImgBrokenDirective,
     OrderListPipe,
-    DataPlaylistComponent
+    DataPlaylistComponent,
+    AlbumHeaderComponent,
+    AlbumBodyComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +45,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CardPlayerComponent,
     ImgBrokenDirective,
     OrderListPipe,
-    DataPlaylistComponent
+    DataPlaylistComponent,
+    AlbumHeaderComponent,
+    AlbumBodyComponent
   ]
 })
 export class SharedModule { }

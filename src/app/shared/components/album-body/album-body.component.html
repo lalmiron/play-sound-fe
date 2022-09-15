@@ -1,0 +1,38 @@
+<div class="album-body">
+    <button class="add-button" [routerLink]="['/','tracks']">
+        <i class="uil uil-plus"></i>
+    </button>
+    <ul class="album-table-header">
+        <li>Cover</li>
+        <li>Nombre</li>
+        <li>Fecha incorporación</li>
+        <li><i class="uil uil-cloud-upload"></i></li>
+    </ul>
+    <ul class="album-rows" *ngFor="let album of [{name:'One Love',createdAt:'2022-09-13 03:01:16',cover:'https://jenesaispop.com/wp-content/uploads/2009/09/guetta_onelove.jpg'}]">
+        <li class="album-name">
+            <ng-container *ngTemplateOutlet="coverSection;context:{album}"></ng-container>
+        </li>
+        <li class="album-name-opacity">
+            {{album.name}}
+        </li>
+        <li class="album-name-opacity">
+            {{album.createdAt | date: 'mediumDate'}}
+        </li>
+        <li class="album-name-opacity">
+            <i class="uil uil-music"></i>
+        </li>
+    </ul>
+</div>
+
+<!--template del cover-->
+<ng-template #coverSection let-album="album">
+
+    <div class="cover-section">
+        <img appImgBroken class="cover-album" [src]="album.cover" [alt]="album.name">
+        <div class="cover-info">
+            <div class="name-album">{{album.name}}</div>
+            <!-- <div class="name-album-details">{{album.artist.name}}</div> -->
+        </div>
+    </div>
+
+</ng-template>
