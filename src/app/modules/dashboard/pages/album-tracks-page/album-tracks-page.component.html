@@ -1,0 +1,6 @@
+<psf-play-list-header [title]="'Album 1'"></psf-play-list-header>
+<psf-play-list-body></psf-play-list-body>
+
+<div class="load-track" *ngIf="addTrack">
+    <psf-load-song (callbackOpen)="reciveData($event)"></psf-load-song>
+</div>

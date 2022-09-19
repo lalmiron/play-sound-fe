@@ -1,0 +1,37 @@
+<div class="genericModal__overlay">
+    <div class="loadtrack-container">
+        <div class="title-container">
+            <h3 class="title-edit">Editar canción</h3>
+            <button class="btn-close" (click)="emitData()">
+                <i class="uil uil-multiply"></i>
+            </button>
+        </div>
+        <form [formGroup]="formSong" (ngSubmit)="sendTrack()" [ngClass]="['form-track']">
+            <div class="input-container-name">
+                <label for="" class="input-label input-label-border label-border">Nombre</label>
+                <input formControlName="name" type="text" placeholder="Nombre" class="title-text-border input-text">
+            </div>
+            <div class="input-container-duration">
+                <label for="" class="input-label input-label-border label-border">Duración</label>
+                <input formControlName="duration" type="text" placeholder="Duración(segundos)" class="title-text-border input-text">
+            </div>
+            <div class="input-container-album">
+                <label for="" class="input-label input-label-border label-border">AlbumId</label>
+                <input formControlName="albumId" type="text" placeholder="Id Album" class="title-text-border input-text">
+            </div>
+            <div class="input-container-artist">
+                <label for="" class="input-label input-label-border label-border">ArtistId</label>
+                <input formControlName="artistId" type="text" placeholder="Id Artista" class="title-text-border input-text">
+            </div>
+            <div class="input-container-track">
+                <label for="" class="input-label input-label-border label-border">Canción</label>
+                <input (change)="saveTrack($event)" formControlName="tracksrc" type="file" [accept]="['audio/*']" class="title-text-border input-text">
+            </div>
+            <div class="save-container">
+                <button type="submit" class="button-save">
+                    <span class="button-save-description">Guardar</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
