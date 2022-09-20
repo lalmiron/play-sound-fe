@@ -18,8 +18,17 @@ export class DashboardService {
   public getAlbums$(): Observable<any> {
     return this._http.get(`${this.URL}/albums`).pipe(
       map((res:any) =>{
-        const { albums } = res
+        const { albums } = res;
         return albums;
+      })
+    )
+  }
+
+  public getTracksFromAlbum$(albumId:string): Observable<any> {
+    return this._http.get(`${this.URL}/album/${albumId}`).pipe(
+      map((res:any) => {
+        const { album } = res;
+        return album;
       })
     )
   }
