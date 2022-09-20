@@ -12,10 +12,6 @@ export class PlaylistService {
 
   constructor(private _http: HttpClient) { 
     this.newPlaylist$.subscribe(responseOK => {
-      if(responseOK){
-        console.log('RESP--->', responseOK);
-        
-      }
     })
    }
 
