@@ -1,5 +1,5 @@
 <div class="album-body">
-    <button class="add-button" [routerLink]="['/','tracks']">
+    <button class="add-button" [routerLink]="['/','dashboard','album']">
         <i class="uil uil-plus"></i>
     </button>
     <ul class="album-table-header">
@@ -8,7 +8,7 @@
         <li>Fecha incorporación</li>
         <li><i class="uil uil-cloud-upload"></i></li>
     </ul>
-    <ul class="album-rows" *ngFor="let album of [{name:'One Love',createdAt:'2022-09-13 03:01:16',cover:'https://jenesaispop.com/wp-content/uploads/2009/09/guetta_onelove.jpg'}]">
+    <ul class="album-rows" *ngFor="let album of albums">
         <li class="album-name">
             <ng-container *ngTemplateOutlet="coverSection;context:{album}"></ng-container>
         </li>
@@ -18,7 +18,7 @@
         <li class="album-name-opacity">
             {{album.createdAt | date: 'mediumDate'}}
         </li>
-        <li class="album-name-opacity">
+        <li routerLink="[{{album.id}}]" class="album-name-opacity">
             <i class="uil uil-music"></i>
         </li>
     </ul>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '@modules/dashboard/services/dashboard.service';
+import { AlbumModel } from '@core/models/album.model';
 
 @Component({
   selector: 'psf-dashboard-page',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-page.component.css']
 })
 export class DashboardPageComponent implements OnInit {
+  albums: Array<AlbumModel> = [];
 
-  constructor() { }
+  constructor(private dashboarService: DashboardService) { }
 
   ngOnInit(): void {
+    this.dashboarService.getAlbums$().subscribe({
+      next: (data:Array<AlbumModel>) => this.albums = data,
+      error: (resp) => console.log(resp)
+    })
   }
 
 }

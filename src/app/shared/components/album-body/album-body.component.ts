@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AlbumModel } from '@core/models/album.model';
 
 @Component({
   selector: 'psf-album-body',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./album-body.component.css']
 })
 export class AlbumBodyComponent implements OnInit {
+  @Input() albums:Array<AlbumModel> = [];
 
   constructor() { }
 
